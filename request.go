@@ -17,12 +17,12 @@ import (
 	"crypto/md5"
 	"encoding/json"
 	"fmt"
-	"github.com/aiwuTech/httpclient"
-	"log"
 	"net/url"
 	"sort"
 	"strings"
 	"time"
+
+	"github.com/aiwuTech/httpclient"
 )
 
 type Request struct {
@@ -48,7 +48,6 @@ func (req *Request) Execute() (*Response, error) {
 		return nil, err
 	}
 
-	log.Println(string(body))
 	rspMsg := new(Response)
 	if err := json.Unmarshal(body, rspMsg); err != nil {
 		return nil, err
